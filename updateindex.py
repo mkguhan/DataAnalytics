@@ -21,7 +21,6 @@ if __name__ == "__main__":
     update_index = update_index_details()
     print("Getting the list of stocks")
     all_index_list = update_index._download_index_details()
-
     all_index_list.index = all_index_list.index + 1
     all_index_list.columns = all_index_list.columns.str.replace(' ','_')
     all_index_list.columns = all_index_list.columns.str.lstrip('_')
