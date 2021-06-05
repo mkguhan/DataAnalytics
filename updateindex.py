@@ -18,6 +18,8 @@ if __name__ == "__main__":
     print("Getting the list of stocks")
     all_index_list = update_index._download_index_details()
     all_index_list.index = all_index_list.index + 1
+    all_index_list.columns = all_index_list.columns.str.replace(' ','_')
+    all_index_list.columns = all_index_list.columns.str.lstrip('_')
     for row in all_index_list.iterrows():
-        values = [row.[0], row[1].SYMBOL, row[1]['NAME OF COMPANY'],row[1]['SERIES'],row[1]['DATE OF LISTING'],row[1]['PAID UP VALUE'],row[1]['MARKET LOT']]
+        values = [row.[0], row[1].SYMBOL, row[1].NAME_OF_COMPANY,row[1].SERIES,row[1].DATE_OF_LISTING,row[1].PAID_UP_VALUE,row[1].MARKET_LOT]
         print(values)
