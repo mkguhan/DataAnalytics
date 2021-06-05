@@ -18,7 +18,7 @@ class update_stock_data_db:
         columns = ",".join(columns_g)
         values = ",".join(values_g)
         self.cur.execute(
-            "INSERT INTO {} ({}) VALUES {}".format(table,columns,values));
+            "INSERT INTO {} ({}) VALUES ({})".format(table,columns,values));
 
         self.conn.commit()
         print("Record inserted successfully")
