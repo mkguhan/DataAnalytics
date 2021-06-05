@@ -12,7 +12,7 @@ class update_stock_data_db:
         self.DSN = "dbname={} user={} password={} host={} port={}".format(self.__DBNAME,self.__USER,self.__PASS,self.__HOST,self.__PORT)
 
 
-    def update_table(self, table, columns_g, values_g):
+    def update_security_table(self, table, columns_g, values_g):
         self.conn = psycopg2.connect(self.DSN)
         self.cur = self.conn.cursor()
         columns = ",".join(columns_g)
