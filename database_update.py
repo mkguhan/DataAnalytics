@@ -15,6 +15,8 @@ class update_stock_data_db:
     def update_table(self, table, columns, values):
         self.conn = psycopg2.connect(self.DSN)
         self.cur = self.conn.cursor()
+        columns = ",".join(columns)
+        values = ",".join(values)
         self.cur.execute(
             "INSERT INTO {} ({}) VALUES ({})".format(table,columns,values));
 
