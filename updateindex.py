@@ -19,5 +19,5 @@ if __name__ == "__main__":
     all_index_list = update_index._download_index_details()
     all_index_list.index = all_index_list.index + 1
     for row in all_index_list.iterrows():
-        values = [row.[0], row[1].SYMBOL, row[1]['NAME OF COMPANY'],row[1]['SERIES'],row[1]['DATE OF LISTING'],row[1]['PAID UP VALUE'],row[1]['MARKET LOT'],row[1]['ISIN NUMBER'],row[1]['FACE VALUE']]
+        values = [row.[0], row[1].SYMBOL, row[1]['NAME OF COMPANY'],row[1]['SERIES'],row[1]['DATE OF LISTING'],row[1]['PAID UP VALUE'],row[1]['MARKET LOT']]
         print(values)
