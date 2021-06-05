@@ -1,4 +1,5 @@
 from download_data import download_data_nse
+from database_update import update_stock_data_db
 
 
 class update_index_details:
@@ -17,4 +18,5 @@ if __name__ == "__main__":
     print("Getting the list of stocks")
     all_index_list = update_index._download_index_details()
     all_index_list.index = all_index_list.index + 1
-    print(all_index_list)
+    for row in all_index_list.iterrows():
+        print(row.index)
