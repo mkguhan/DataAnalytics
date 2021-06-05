@@ -19,4 +19,4 @@ if __name__ == "__main__":
     all_index_list = update_index._download_index_details()
     all_index_list.index = all_index_list.index + 1
     for row in all_index_list.iterrows():
-        print(row.index)
+        print(row['SYMBOL'])
