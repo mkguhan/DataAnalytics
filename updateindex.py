@@ -30,5 +30,5 @@ if __name__ == "__main__":
         values = [str(row[0]), row[1].SYMBOL, row[1].NAME_OF_COMPANY,' ',row[1].DATE_OF_LISTING.strftime("%d-%m-%Y"),row[1].SERIES,row[1].ISIN_NUMBER,str(row[1].FACE_VALUE),str(row[1].PAID_UP_VALUE),str(row[1].MARKET_LOT)]
         print(update_index.index_column)
         print(values)
-        con.update_table('security',update_index.index_column, values)
+        con.update_security_table('security',update_index.index_column, values)
 
