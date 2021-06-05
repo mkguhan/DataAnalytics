@@ -8,7 +8,8 @@ class update_index_details:
         self.url = "https://www.nseindia.com/api/allIndices?csv=true"
 
     def _download_index_details(self, url):
-        index_list = download_data_nse._download_url_as_dataframe(url)
+        download_csv = download_data_nse._download_url(url)
+        index_list = download_data_nse._download_url_as_dataframe(download_csv)
         return index_list
 
 
