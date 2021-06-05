@@ -12,6 +12,8 @@ class download_data_nse:
         print("reading CSV with pandas")
         read_csv = pd.read_csv(filename)
         return read_csv
+
+
     @staticmethod
     def _download_url(url):
         print("Download url")

@@ -5,7 +5,7 @@ class update_index_details:
 
     def __init__(self):
         self.index = True
-        self.url = "https://www.nseindia.com/api/allIndices?csv=true"
+        self.url = "https://archives.nseindia.com/content/equities/EQUITY_L.csv"
 
     def _download_index_details(self, url):
         download_csv = download_data_nse._download_url(url)
