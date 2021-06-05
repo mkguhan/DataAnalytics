@@ -9,6 +9,7 @@ class download_data_nse:
     @staticmethod
     #download the data as Dataframe
     def _download_url_as_dataframe(url):
+        print("reading CSV with pandas")
         read_csv = pd.read_csv(url)
         return read_csv
 

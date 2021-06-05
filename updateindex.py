@@ -16,5 +16,6 @@ class update_index_details:
 
 if __name__ == "__main__":
     update_index = update_index_details()
+    print("Getting the list of stocks")
     all_index_list = update_index._download_index_details(update_index.url)
     print(all_index_list)
