@@ -1,7 +1,7 @@
 import psycopg2
 
 class update_stock_data_db:
-    __DBNAME = "stock_data"
+    __DBNAME = "stockdata"
     __USER = "trader"
     __PASS = "intraday"
     __HOST = "127.0.0.1"
