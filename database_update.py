@@ -9,7 +9,7 @@ class update_stock_data_db:
 
 
     def __init__(self):
-        self.DSN = "dbname='stock_data', user='trader' , password='intraday' , host='127.0.0.1' , port='5432'".format(self.__DBNAME,self.__USER,self.__PASS,self.__HOST,self.__PORT)
+        self.DSN = "dbname='stock_data',user='trader',password='intraday',host='127.0.0.1',port='5432'".format(self.__DBNAME,self.__USER,self.__PASS,self.__HOST,self.__PORT)
 
 
     def update_table(self, table, columns, values):
