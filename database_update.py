@@ -12,13 +12,11 @@ class update_stock_data_db:
         self.DSN = "dbname={} user={} password={} host={} port={}".format(self.__DBNAME,self.__USER,self.__PASS,self.__HOST,self.__PORT)
 
 
-    def update_security_table(self, table, columns_g, values_g):
+    def update_security_table(self, table, columns, values):
         self.conn = psycopg2.connect(self.DSN)
         self.cur = self.conn.cursor()
-        columns = ",".join(columns_g)
-        values = ",".join(values_g)
         self.cur.execute(
-            "INSERT INTO {} ({}) VALUES ({})".format(table,columns,values));
+            "INSERT INTO security (['id', 'code', 'name', 'description', 'listed_date', 'series', 'isin_number', 'facevalue', 'paidup_value', 'market_lot') VALUES ({},{},{},{},{},{},{},{},{})".format(values[0],values[1],values[2],values[3],values[4],values[5],values[6],values[7],values[8]));
 
         self.conn.commit()
         print("Record inserted successfully")
