@@ -34,7 +34,7 @@ class preopenmarket_update:
         )
 
         response = requests.get('https://www.nseindia.com/api/market-data-pre-open', headers=headers, params=params)
-        print(response.content)
+        print(response.text)
 
 if __name__ == "__main__":
     security_preopen = preopenmarket_update()
