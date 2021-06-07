@@ -24,3 +24,19 @@ class update_stock_data_db:
             print("Failed to insert record into security table", error)
         finally:
             self.conn.close()
+
+    @classmethod
+    def get_security_id_list(self):
+        try:
+            self.conn = psycopg2.connect(self.DSN)
+            self.cur = self.conn.cursor()
+            sql = "Select id,code from security"
+            self.cur.execute(sql)
+            security_details = self.cur.fetchall()
+            return security_details
+        except (Exception, psycopg2.Error) as error:
+            print("Failed get list of securites", error)
+
+
+    def update_preopenmarket_date(self,data):
+        pass
