@@ -6,7 +6,7 @@ class update_stock_data_db:
     __PASS = "intraday"
     __HOST = "127.0.0.1"
     __PORT = "5432"
-    __DSN = "dbname={} user={} password={} host={} port={}".format(self.__DBNAME,self.__USER,self.__PASS,self.__HOST,self.__PORT)
+    __DSN = "dbname={} user={} password={} host={} port={}".format(__DBNAME,__USER,__PASS,__HOST,__PORT)
 
 
     def __init__(self):
