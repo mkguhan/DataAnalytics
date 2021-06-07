@@ -12,7 +12,7 @@ class preopenmarket_update:
         print(list)
 
     @staticmethod
-    def download_preopendata(self):
+    def download_preopendata():
         url = "https://www.nseindia.com/api/market-data-pre-open?key=NIFTY&csv=true"
         headers = {
             "accept": "*/*",
