@@ -11,8 +11,7 @@ class preopenmarket_update:
         list = update_stock_data_db.get_security_id_list()
         print(list)
 
-    @staticmethod
-    def download_preopendata():
+    def download_preopendata(self):
         url = "https://www.nseindia.com/api/market-data-pre-open?key=NIFTY&csv=true"
         headers = {
             "accept": "*/*",
