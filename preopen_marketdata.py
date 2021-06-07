@@ -35,7 +35,8 @@ class preopenmarket_update:
 
         response = requests.get('https://www.nseindia.com/api/market-data-pre-open', headers=headers, params=params)
         for data in  response.text.splitlines()[10:]:
-            print(data[1:-2].split('","'))
+            data = data.replace('-','0.0')
+            print(data[1:-1].split('","'))
 
 if __name__ == "__main__":
     security_preopen = preopenmarket_update()
