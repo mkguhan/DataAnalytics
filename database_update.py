@@ -6,6 +6,7 @@ class update_stock_data_db:
     __PASS = "intraday"
     __HOST = "127.0.0.1"
     __PORT = "5432"
+    __DSN = "dbname={} user={} password={} host={} port={}".format(self.__DBNAME,self.__USER,self.__PASS,self.__HOST,self.__PORT)
 
 
     def __init__(self):
@@ -26,13 +27,13 @@ class update_stock_data_db:
             self.conn.close()
 
     @classmethod
-    def get_security_id_list(self):
+    def get_security_id_list(update_stock_data_db):
         try:
-            self.conn = psycopg2.connect(self.DSN)
-            self.cur = self.conn.cursor()
+            conn = psycopg2.connect(update_stock_data_db.__DSN)
+            cur = conn.cursor()
             sql = "Select id,code from security"
-            self.cur.execute(sql)
-            security_details = self.cur.fetchall()
+            cur.execute(sql)
+            security_details = cur.fetchall()
             return security_details
         except (Exception, psycopg2.Error) as error:
             print("Failed get list of securites", error)
