@@ -6,7 +6,7 @@ class preopenmarket_update:
     def __init__(self):
         pass
 
-    @staticmethod
+
     def get_list_sec_id(self):
         list = update_stock_data_db.get_security_id_list()
         print(list)
