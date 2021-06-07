@@ -1,6 +1,5 @@
 from  database_update import  update_stock_data_db
 import  requests
-import json
 
 class preopenmarket_update:
 
@@ -35,8 +34,7 @@ class preopenmarket_update:
         )
 
         response = requests.get('https://www.nseindia.com/api/market-data-pre-open', headers=headers, params=params)
-        response = str(response.text).strip("'<>() ").replace('\'', '\"')
-        print(json.loads(response))
+        print(response.text.splitlines())
 
 if __name__ == "__main__":
     security_preopen = preopenmarket_update()
