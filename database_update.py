@@ -13,10 +13,14 @@ class update_stock_data_db:
 
 
     def update_security_table(self, table, columns, values):
-        self.conn = psycopg2.connect(self.DSN)
-        self.cur = self.conn.cursor()
-        self.cur.execute("INSERT INTO security (id, code, name, description, listed_date, series, isin_number, facevalue, paidup_value, market_lot) VALUES (values[0],values[1],values[2],values[3],values[4],values[5],values[6],values[7],values[8],values[9])");
-
-        self.conn.commit()
-        print("Record inserted successfully")
-        self.conn.close()
+        try:
+            self.conn = psycopg2.connect(self.DSN)
+            self.cur = self.conn.cursor()
+            sql = "INSERT INTO security (id, code, name, description, listed_date, series, isin_number, facevalue, paidup_value, market_lot) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+            self.cur.execute(sql, values)
+            self.conn.commit()
+            print("Record inserted successfully")
+        except (Exception, psycopg2.Error) as error:
+            print("Failed to insert record into security table", error)
+        finally:
+            self.conn.close()
