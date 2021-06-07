@@ -41,3 +41,4 @@ class update_stock_data_db:
 
     def update_preopenmarket_date(self,data):
         pass
+
